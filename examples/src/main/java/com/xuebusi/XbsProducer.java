@@ -23,7 +23,7 @@ public class XbsProducer {
         KafkaProducer producer = new KafkaProducer(props);
         ProducerRecord<String, String> record = new ProducerRecord<>("zp", 0, "topic_zp_test_key_1", "topic_zp_test_value_1");
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10; i++) {
             Future<RecordMetadata> future = producer.send(record);
             try {
                 RecordMetadata metadata = future.get();
